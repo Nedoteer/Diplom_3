@@ -5,4 +5,5 @@ class Urls:
     LOGIN = 'https://stellarburgers.nomoreparties.site/login'
     URL_REGISTER = 'api/auth/register'
 
-    MAX_WAIT_TIME = 15
+
+    MAX_WAIT_TIME = 20

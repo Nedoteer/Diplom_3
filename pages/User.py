@@ -4,6 +4,7 @@ import random
 import allure
 import requests
 
+from data import StellarData
 from urls import Urls
 
 
@@ -29,4 +30,5 @@ class User:
         response = requests.post(Urls.STELLAR + Urls.URL_REGISTER, json=payload)
 
         return response
+
 

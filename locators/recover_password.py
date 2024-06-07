@@ -11,8 +11,10 @@ class StellarBurgersLocators:
     BUTTON_CONSTRUCTOR = (By.XPATH, "//p[contains(text(), 'Конструктор')]")
     BUTTON_COUNT = (By.XPATH, "//p[contains(text(), 'Лента Заказов')]")
     BUTTON_IMG = (By.XPATH, "//img[@src = 'https://code.s3.yandex.net/react/code/bun-02.png']")
-    BUTTON_KRESTIC = (By.XPATH, "//button[@class = 'Modal_modal__close_modified__3V5XS Modal_modal__close__TnseK']")
+    BUTTON_KRESTIC = (By.XPATH, "//button[contains(@class, 'close')]")
     BUTTON_SAVE = (By.XPATH, "//button[contains(text(), 'Сохранить')]")
+    MODAL_OVERLAY = (By.XPATH, './/div[@class = "Modal_modal_opened__3ISw4 Modal_modal__P3_V5"]'
+                               '/div[@class = "Modal_modal_overlay__x2ZCr"]')
 
     ORDER_READY = (By.XPATH, "//li[contains(text(), 'Все текущие заказы готовы!')]")
     IN_WORK = (By.XPATH, "//p[@class = 'text text_type_main-medium']/following-sibling::ul[@class = 'OrderFeed_orderListReady__1YFem OrderFeed_orderList__cBvyi']")
@@ -43,3 +45,6 @@ class StellarBurgersLocators:
     INT_COUNT = (By.XPATH, "//h2[@class = 'Modal_modal__title_shadow__3ikwq Modal_modal__title__2L34m text text_type_digits-large mb-8']")
     TEXT_WHEIT = (By.XPATH, "//p[contains(text(), 'Дождитесь готовности на орбитальной станции')]")
     FULL_WINDOW = (By.XPATH,  "//div[@class = 'Modal_modal__container__Wo2l_']")
+    EMPTY_WINDOW = (By.XPATH, "//section[@class = 'Modal_modal_opened__3ISw4 Modal_modal__P3_V5']")
+    INVISIBL = (By.XPATH, "//div[@class = 'Modal_modal__P3_V5']")
+    IMG_LOAD = (By.XPATH, "//img[@scr = './static/media/loading.89540200.svg']")
