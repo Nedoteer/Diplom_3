@@ -4,18 +4,12 @@ from selenium.webdriver.support.wait import WebDriverWait
 from seletools.actions import drag_and_drop
 
 from locators.recover_password import StellarBurgersLocators
-from pages.User import User
+from User import User
 from pages.base_page import BasePage
 
 
 class StringCount(BasePage):
 
-    @allure.step('Отображение елемента на странице')
-    def displayed_element(self, locator):
-
-        WebDriverWait(self.driver, timeout=5).until(expected_conditions.element_to_be_clickable(locator))
-        test = self.driver.find_element(*locator)
-        test.is_displayed()
 
     @allure.step('Клик по заказу, откроется всплывающее окно с деталями')
     def click_count(self):
@@ -51,14 +45,14 @@ class StringCount(BasePage):
         return order.text
 
     @allure.step('Получение заказа из истории заказа')
-    def get_order(self, number_order):
-        history_order = self.order_displayed(number_order)
+    def get_order(self):
+        history_order = self.order_displayed(StellarBurgersLocators.NUM_ORDER)
         self.wheit_and_click(StellarBurgersLocators.BUTTON_COUNT)
         return history_order
 
     @allure.step('Получение номера заказа из ленты заказов')
-    def get_nubmer_order_from_string_order(self, number_order):
-        string_order = self.order_displayed(number_order)
+    def get_nubmer_order_from_string_order(self):
+        string_order = self.order_displayed(StellarBurgersLocators.NUM_ORDER)
         return string_order
 
     @allure.step('Количество сделаных заказов')

@@ -19,9 +19,9 @@ class TestStringCount:
     @allure.description('Заказы пользователя из раздела «История заказов» отображаются на странице «Лента заказов»')
     def test_count_user_string(self, driver):
         count_user_string = StringCount(driver)
-        order = count_user_string.number_new_order()
-        history_order = count_user_string.get_order(order)
-        string_order = count_user_string.get_nubmer_order_from_string_order(order)
+        count_user_string.number_new_order()
+        history_order = count_user_string.get_order()
+        string_order = count_user_string.get_nubmer_order_from_string_order()
         assert history_order == string_order
 
     @allure.title('Раздел лента заказов')

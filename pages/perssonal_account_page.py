@@ -1,7 +1,7 @@
 import allure
 
 from locators.recover_password import StellarBurgersLocators
-from pages.User import User
+from User import User
 from pages.base_page import BasePage
 
 

@@ -48,3 +48,4 @@ class StellarBurgersLocators:
     EMPTY_WINDOW = (By.XPATH, "//section[@class = 'Modal_modal_opened__3ISw4 Modal_modal__P3_V5']")
     INVISIBL = (By.XPATH, "//div[@class = 'Modal_modal__P3_V5']")
     IMG_LOAD = (By.XPATH, "//img[@scr = './static/media/loading.89540200.svg']")
+    NUM_ORDER = (By.XPATH, "//p[@class = 'text text_type_digits-default']")

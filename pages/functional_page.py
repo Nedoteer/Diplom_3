@@ -2,11 +2,11 @@ import allure
 from seletools.actions import drag_and_drop
 
 from locators.recover_password import StellarBurgersLocators
-from pages.User import User
+from User import User
 from pages.base_page import BasePage
 
 
-class Functional(BasePage):
+class FunctionalPage(BasePage):
 
     @allure.step('Переход по клику на «Конструктор»')
     def click_constructor(self):

@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
+from locators.recover_password import StellarBurgersLocators
 from urls import Urls
 
 
@@ -23,9 +24,9 @@ class BasePage:
         return self.driver.current_url
 
     @allure.step('Отображение заказа')
-    def order_displayed(self, Num):
-        WebDriverWait(self.driver, Urls.MAX_WAIT_TIME).until(expected_conditions.visibility_of_element_located((By.XPATH, f"//p[contains(text(), '{Num}')]")))
-        displayed = self.driver.find_element(By.XPATH, f"//p[contains(text(), '{Num}')]")
+    def order_displayed(self, locator):
+        WebDriverWait(self.driver, Urls.MAX_WAIT_TIME).until(expected_conditions.visibility_of_element_located(locator))
+        displayed = self.driver.find_element(*locator)
         result = displayed.is_displayed()
         return result
 
@@ -68,3 +69,9 @@ class BasePage:
         WebDriverWait(self.driver, Urls.MAX_WAIT_TIME).until(
             expected_conditions.visibility_of_all_elements_located(locator))
 
+    @allure.step('Отображение елемента на странице')
+    def displayed_element(self, locator):
+
+        WebDriverWait(self.driver, timeout=5).until(expected_conditions.element_to_be_clickable(locator))
+        test = self.driver.find_element(*locator)
+        test.is_displayed()
